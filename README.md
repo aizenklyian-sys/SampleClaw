@@ -1,51 +1,81 @@
-# SampleClaw
+# <img src="assets/logo.png" width="48" height="48" valign="middle"> SampleClaw
 
-**SampleClaw** is a modernized 2D platformer engine inspired by the **OpenClaw** project (a reimplementation of the 1997 classic "Captain Claw").
+[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/aizenklyian-sys/SampleClaw?style=flat-square&color=yellow)](https://github.com/aizenklyian-sys/SampleClaw/stargazers)
 
-## Key Features
+**SampleClaw** is a powerful, production-ready autonomous AI agent framework designed for speed, safety, and extreme ease of use. It empowers developers to build intelligent agents that can plan, act, and learn from their environment with minimal boilerplate.
 
-- **Modern C++ Architecture**: Built with C++17, focusing on clean code, safety, and performance.
-- **Entity Component System (ECS)**: A robust ECS for managing game entities and behaviors.
-- **Cross-Platform Support**: Built using SDL2, ensuring compatibility with Windows, Linux, and macOS.
-- **Modular Design**: Separates core engine logic, graphics, physics, and audio for easy extension.
-- **Modern Rendering**: Supports high-resolution displays and widescreen aspect ratios.
+## ✨ Features & Highlights
 
-## Getting Started
+SampleClaw is built from the ground up to be the **fastest** and **easiest to use** agent framework available. It improves upon existing solutions by offering:
 
-### Prerequisites
+-   ⚡ **Lightning Fast**: Optimized core loop with `asyncio` for non-blocking operations, ensuring rapid execution and responsiveness.
+-   🛡️ **Production-Ready Safety**: Built-in safety mechanisms, configurable guardrails, and robust error recovery for secure and reliable agent deployment.
+-   🎯 **Extreme Simplicity**: Create a fully functional autonomous agent in just a few lines of code, abstracting away complexity.
+-   🧩 **Highly Extensible**: A modular skills and tools system that allows seamless integration of custom functionalities and external APIs.
+-   🧠 **Comprehensive Memory**: Integrated dual-layered memory (short-term context & long-term knowledge) for persistent learning and informed decision-making.
+-   🔄 **Self-Reflection & Recovery**: Agents can analyze their performance, diagnose failures, and automatically re-plan to achieve goals.
 
-To build SampleClaw, you will need:
+## 🏗️ Architecture Overview
 
-- A C++17 compatible compiler (GCC, Clang, or MSVC)
-- CMake 3.15 or higher
-- SDL2, SDL2_image, SDL2_mixer, and SDL2_ttf development libraries
+SampleClaw follows a sophisticated **Plan-Act-Observe** cycle, orchestrated by a central Agentic Loop. This design ensures that agents can intelligently process information, make decisions, execute actions, and learn from outcomes.
 
-### Building
+![SampleClaw Architecture](assets/architecture.png)
 
+### Core Components:
+-   **Agentic Loop**: The central orchestrator, managing the continuous cycle of planning, acting, and observing.
+-   **Skills System**: A flexible plugin architecture for defining and managing the agent's capabilities (e.g., web search, code execution, file operations).
+-   **Memory**: Comprises both short-term (contextual) and long-term (knowledge base) memory for comprehensive information retention.
+-   **Safety Mechanisms**: Enforces ethical and secure operation through pre-action checks, content moderation, and human oversight points.
+-   **Self-Reflection & Error Recovery**: Enables the agent to evaluate its performance, identify issues, and adapt its strategy to overcome challenges.
+
+## 🚀 Quick Start
+
+Get your first SampleClaw agent up and running in minutes!
+
+### Installation
+
+Install SampleClaw directly from GitHub (PyPI coming soon!):
 ```bash
-mkdir build
-cd build
-cmake ..
-make
+pip install git+https://github.com/aizenklyian-sys/SampleClaw.git
 ```
 
-### Running
+### Example Usage
 
-```bash
-./SampleClaw
+Create a simple agent that researches and summarizes information:
+
+```python
+import asyncio
+from sampleclaw import AgentFactory
+
+async def main():
+    # Create an agent with default skills (web search, code execution, etc.)
+    agent = AgentFactory.create_default_agent(
+        name="ClawBot",
+        goal="research the latest trends in AI agents and save a summary to trends.txt"
+    )
+
+    # Run the agent autonomously
+    print(f"--- Starting Agent: {agent.name} ---")
+    status = await agent.run()
+    print(f"--- Agent {agent.name} finished with status: {status} ---")
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
-## Project Structure
+## 📚 Documentation
 
-- `include/`: Header files for the engine and ECS.
-- `src/`: Implementation files for the engine core and main entry point.
-- `assets/`: Directory for game assets (textures, sounds, etc.).
-- `cmake/`: Custom CMake modules.
+For detailed guides, API references, and advanced usage examples, please visit our [Documentation](docs/README.md).
 
-## Acknowledgments
+## 🤝 Contributing
 
-This project is inspired by the original [OpenClaw](https://github.com/pjasicek/OpenClaw) reimplementation of Captain Claw.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
 
-## License
+## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+SampleClaw is released under the [MIT License](LICENSE).
+
+---
+*Built with ❤️ by aizenklyian-sys.*

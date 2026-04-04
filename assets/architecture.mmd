@@ -1,0 +1,20 @@
+graph TD
+    A[User Input/Goal] --> B(Agentic Loop)
+    B --> C{Plan}
+    C --> D["Memory (Short-term & Long-term)"]
+    C --> E[Skills System]
+    E --> F[Tools]
+    D --> C
+    E --> C
+    C --> G{Act}
+    G --> E
+    G --> F
+    G --> H{Observe}
+    H --> D
+    H --> I["Self-Reflection & Error Recovery"]
+    I --> C
+    I --> J[Safety Mechanisms]
+    J --> G
+    J --> C
+    H --> B
+    B --> K["Output/Result"]
